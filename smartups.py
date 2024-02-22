@@ -184,19 +184,19 @@ def bq25895_read_status():
 		bus.write_byte_data(BQ25895_ADDRESS, REG_BATFET_DIS, BYTE_BATFET_DIS)
 
 def print_bq25895status():
-	print "Input: " , bq25895_status['Input']
-	print "ChargeStatus: " , bq25895_status['ChargeStatus']
-	print "BatteryVoltage: " , bq25895_status['BatteryVoltage'], "V"
-	print "BatteryPercentage: " , bq25895_status['BatteryPercentage'] , "%"
-	print("VSYS_STAT: ", bin(vsys_stat), "SDP_STAT: ", bin(sdp_stat),
+	print("Input: " , bq25895_status['Input'])
+	print("ChargeStatus: " , bq25895_status['ChargeStatus'])
+	print("BatteryVoltage: " , bq25895_status['BatteryVoltage'], "V")
+	print("BatteryPercentage: " , bq25895_status['BatteryPercentage'] , "%")
+	print(("VSYS_STAT: ", bin(vsys_stat), "SDP_STAT: ", bin(sdp_stat),
 		"PG_STAT:", bin(pg_stat), "CHRG_STAT:" , bin(chrg_stat),
-		"VBUS_STAT:", bin(vbus_stat))
+		"VBUS_STAT:", bin(vbus_stat)))
 
 def print_max17048status():
-	print "Status of max17048:"
-	print '%.2f' % max17048_v , "V"
-	print max17048_soc , "%"
-	print "Status of bq25895:"
+	print("Status of max17048:")
+	print('%.2f' % max17048_v , "V")
+	print(max17048_soc , "%")
+	print("Status of bq25895:")
 
 # Intialize the library (must be called once before other functions).
 def led_init():
@@ -416,7 +416,7 @@ def ignore(sig, frsma):
 	exit_thread = True
 
 def handler(signum, frame):
-    print "Signal is received:" + str(signum)
+    print("Signal is received:" + str(signum))
     exit_thread=True
     thread_led.join()
     exit
